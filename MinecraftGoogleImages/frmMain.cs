@@ -174,6 +174,12 @@ namespace MinecraftGoogleImages
                 return;
             }
 
+            if (!Directory.Exists(dataPathWork))
+            {
+                ShowError("No data found. Run the Extract jar before");
+                return;
+            }
+
             if (!int.TryParse(txtPixelsW.Text, out pixelsWidth))
             {
                 ShowError("Invalid value for Pixel X");
@@ -324,7 +330,7 @@ namespace MinecraftGoogleImages
                 }
                 GetImages(diChild, parent);
             }
-            if (di.GetFiles().Length == 0 && di.GetDirectories().Length == 0)
+            if (di.GetFiles().Length == 0 && di.GetDirectories().Length == 0 && di.FullName != dataPathWork)
                 di.Delete();
         }
 
@@ -337,11 +343,13 @@ namespace MinecraftGoogleImages
             }
             // Search name
             string name = Path.GetFileNameWithoutExtension(file.Name);
-            string search = name + (tagEnabled ? " " + tag : "");
+            string search = name + (tagEnabled ? "+" + tag : "");
             search = search.Replace('_', '+');
             Console.WriteLine("Searching : " + search);
             string tag1 = (transOnly ? "&tbs=ic:trans" : string.Empty);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($@"https://www.google.co.uk/search?q={search}+-minecraft&tbm=isch{tag1}{queryTags}");
+            string url = $@"https://www.google.co.uk/search?q={search}+-minecraft&tbm=isch{tag1}{queryTags}";
+            Console.WriteLine("Searching : " + url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
 
             file.Delete();
@@ -384,6 +392,7 @@ namespace MinecraftGoogleImages
                     GetImageForFile(file, index + 1, mode);
                     return;
                 }
+                Console.WriteLine("Found image : " + htmlUrl);
 
                 // Download image
                 try

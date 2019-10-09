@@ -36,28 +36,28 @@
             this.lblCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnGetImages = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTags = new EsseivaN.Controls.TextboxWatermark();
+            this.chbTrans = new System.Windows.Forms.CheckBox();
+            this.lblBackground = new System.Windows.Forms.Label();
+            this.visuBackground = new System.Windows.Forms.Panel();
+            this.cbBackground = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.chbTag = new System.Windows.Forms.CheckBox();
             this.txtTag = new EsseivaN.Controls.TextboxWatermark();
+            this.txtImgIndex = new EsseivaN.Controls.TextboxWatermark();
+            this.chbRnd = new System.Windows.Forms.CheckBox();
             this.cbResizeMode = new System.Windows.Forms.ComboBox();
             this.txtPixelsH = new EsseivaN.Controls.TextboxWatermark();
             this.txtPixelsW = new EsseivaN.Controls.TextboxWatermark();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCreateZip = new System.Windows.Forms.Button();
-            this.chbRnd = new System.Windows.Forms.CheckBox();
-            this.txtImgIndex = new EsseivaN.Controls.TextboxWatermark();
             this.btnSelJar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.cbBackground = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.visuBackground = new System.Windows.Forms.Panel();
-            this.lblBackground = new System.Windows.Forms.Label();
-            this.chbTrans = new System.Windows.Forms.CheckBox();
-            this.txtTags = new EsseivaN.Controls.TextboxWatermark();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -144,6 +144,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.HideSelection = false;
+            this.textBox1.Location = new System.Drawing.Point(6, 310);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(147, 51);
+            this.textBox1.TabIndex = 17;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "e.g. \"&tbs=ic:specific,isc:red\"\r\nfor color red";
+            // 
+            // txtTags
+            // 
+            this.txtTags.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtTags.Location = new System.Drawing.Point(6, 284);
+            this.txtTags.Name = "txtTags";
+            this.txtTags.Size = new System.Drawing.Size(147, 20);
+            this.txtTags.TabIndex = 16;
+            this.txtTags.TextColor = System.Drawing.SystemColors.ControlText;
+            this.txtTags.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.txtTags.WatermarkText = "Additionnal query tags";
+            // 
+            // chbTrans
+            // 
+            this.chbTrans.AutoSize = true;
+            this.chbTrans.Enabled = false;
+            this.chbTrans.Location = new System.Drawing.Point(6, 261);
+            this.chbTrans.Name = "chbTrans";
+            this.chbTrans.Size = new System.Drawing.Size(141, 17);
+            this.chbTrans.TabIndex = 15;
+            this.chbTrans.Text = "Transparent images only";
+            this.chbTrans.UseVisualStyleBackColor = true;
+            // 
+            // lblBackground
+            // 
+            this.lblBackground.AutoSize = true;
+            this.lblBackground.Location = new System.Drawing.Point(6, 218);
+            this.lblBackground.Name = "lblBackground";
+            this.lblBackground.Size = new System.Drawing.Size(65, 13);
+            this.lblBackground.TabIndex = 14;
+            this.lblBackground.Text = "Background";
+            // 
+            // visuBackground
+            // 
+            this.visuBackground.Location = new System.Drawing.Point(132, 234);
+            this.visuBackground.Name = "visuBackground";
+            this.visuBackground.Size = new System.Drawing.Size(21, 21);
+            this.visuBackground.TabIndex = 13;
+            this.visuBackground.Click += new System.EventHandler(this.visuBackground_Click);
+            // 
+            // cbBackground
+            // 
+            this.cbBackground.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBackground.FormattingEnabled = true;
+            this.cbBackground.Items.AddRange(new object[] {
+            "Transparent",
+            "Fixed  color"});
+            this.cbBackground.Location = new System.Drawing.Point(6, 234);
+            this.cbBackground.Name = "cbBackground";
+            this.cbBackground.Size = new System.Drawing.Size(120, 21);
+            this.cbBackground.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 156);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Take result index : ";
+            // 
             // chbTag
             // 
             this.chbTag.AutoSize = true;
@@ -165,6 +238,29 @@
             this.txtTag.TextColor = System.Drawing.SystemColors.ControlText;
             this.txtTag.WatermarkColor = System.Drawing.SystemColors.GrayText;
             this.txtTag.WatermarkText = "Search tag";
+            // 
+            // txtImgIndex
+            // 
+            this.txtImgIndex.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtImgIndex.Location = new System.Drawing.Point(6, 172);
+            this.txtImgIndex.Name = "txtImgIndex";
+            this.txtImgIndex.Size = new System.Drawing.Size(101, 20);
+            this.txtImgIndex.TabIndex = 9;
+            this.txtImgIndex.Text = "1";
+            this.txtImgIndex.TextColor = System.Drawing.SystemColors.ControlText;
+            this.txtImgIndex.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.txtImgIndex.WatermarkText = "Default result index";
+            // 
+            // chbRnd
+            // 
+            this.chbRnd.AutoSize = true;
+            this.chbRnd.Location = new System.Drawing.Point(6, 198);
+            this.chbRnd.Name = "chbRnd";
+            this.chbRnd.Size = new System.Drawing.Size(66, 17);
+            this.chbRnd.TabIndex = 8;
+            this.chbRnd.Text = "Random";
+            this.chbRnd.UseVisualStyleBackColor = true;
+            this.chbRnd.CheckedChanged += new System.EventHandler(this.chbRnd_CheckedChanged);
             // 
             // cbResizeMode
             // 
@@ -224,29 +320,6 @@
             this.btnCreateZip.UseVisualStyleBackColor = true;
             this.btnCreateZip.Click += new System.EventHandler(this.btnCreateZip_Click);
             // 
-            // chbRnd
-            // 
-            this.chbRnd.AutoSize = true;
-            this.chbRnd.Location = new System.Drawing.Point(6, 198);
-            this.chbRnd.Name = "chbRnd";
-            this.chbRnd.Size = new System.Drawing.Size(66, 17);
-            this.chbRnd.TabIndex = 8;
-            this.chbRnd.Text = "Random";
-            this.chbRnd.UseVisualStyleBackColor = true;
-            this.chbRnd.CheckedChanged += new System.EventHandler(this.chbRnd_CheckedChanged);
-            // 
-            // txtImgIndex
-            // 
-            this.txtImgIndex.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtImgIndex.Location = new System.Drawing.Point(6, 172);
-            this.txtImgIndex.Name = "txtImgIndex";
-            this.txtImgIndex.Size = new System.Drawing.Size(101, 20);
-            this.txtImgIndex.TabIndex = 9;
-            this.txtImgIndex.Text = "1";
-            this.txtImgIndex.TextColor = System.Drawing.SystemColors.ControlText;
-            this.txtImgIndex.WatermarkColor = System.Drawing.SystemColors.GrayText;
-            this.txtImgIndex.WatermarkText = "Default result index";
-            // 
             // btnSelJar
             // 
             this.btnSelJar.Location = new System.Drawing.Point(12, 12);
@@ -285,15 +358,6 @@
             this.treeView1.TabIndex = 12;
             this.treeView1.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCheck);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Take result index : ";
-            // 
             // btnCopy
             // 
             this.btnCopy.Location = new System.Drawing.Point(150, 116);
@@ -303,69 +367,6 @@
             this.btnCopy.Text = "Copy to ressource pack folder";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // cbBackground
-            // 
-            this.cbBackground.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBackground.FormattingEnabled = true;
-            this.cbBackground.Items.AddRange(new object[] {
-            "Transparent",
-            "Fixed  color"});
-            this.cbBackground.Location = new System.Drawing.Point(6, 234);
-            this.cbBackground.Name = "cbBackground";
-            this.cbBackground.Size = new System.Drawing.Size(120, 21);
-            this.cbBackground.TabIndex = 12;
-            // 
-            // visuBackground
-            // 
-            this.visuBackground.Location = new System.Drawing.Point(132, 234);
-            this.visuBackground.Name = "visuBackground";
-            this.visuBackground.Size = new System.Drawing.Size(21, 21);
-            this.visuBackground.TabIndex = 13;
-            this.visuBackground.Click += new System.EventHandler(this.visuBackground_Click);
-            // 
-            // lblBackground
-            // 
-            this.lblBackground.AutoSize = true;
-            this.lblBackground.Location = new System.Drawing.Point(6, 218);
-            this.lblBackground.Name = "lblBackground";
-            this.lblBackground.Size = new System.Drawing.Size(65, 13);
-            this.lblBackground.TabIndex = 14;
-            this.lblBackground.Text = "Background";
-            // 
-            // chbTrans
-            // 
-            this.chbTrans.AutoSize = true;
-            this.chbTrans.Location = new System.Drawing.Point(6, 261);
-            this.chbTrans.Name = "chbTrans";
-            this.chbTrans.Size = new System.Drawing.Size(141, 17);
-            this.chbTrans.TabIndex = 15;
-            this.chbTrans.Text = "Transparent images only";
-            this.chbTrans.UseVisualStyleBackColor = true;
-            // 
-            // txtTags
-            // 
-            this.txtTags.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtTags.Location = new System.Drawing.Point(6, 284);
-            this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(147, 20);
-            this.txtTags.TabIndex = 16;
-            this.txtTags.TextColor = System.Drawing.SystemColors.ControlText;
-            this.txtTags.WatermarkColor = System.Drawing.SystemColors.GrayText;
-            this.txtTags.WatermarkText = "Additionnal query tags";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(6, 310);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(147, 51);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "e.g. \"&tbs=ic:specific,isc:red\"\r\nfor color red";
             // 
             // frmMain
             // 
