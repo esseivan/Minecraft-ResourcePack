@@ -35,5 +35,9 @@ RECOMMENDED : Keep font, gui folders disabled because they contains the letters 
 
 At the bottom is a progress barr, with a status label and the number of png files found in the data\work directories. This number don't depend on the selection of the folders
 
+Warning : This may take some time and data to gather the images. If you do all (almost) 2k images, it may take about 5-10min and 100-200MB. 
+!!! You may also be timed out by google for some time because of too many request (no more than 10-20 min normally) !!!
 
 
+
+Esseiva N
